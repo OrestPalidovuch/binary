@@ -92,3 +92,78 @@ window.onload = function() {
 			        $('.main').removeClass('fix');
 			    }
 		});
+		var $animation_elements = $('.photo_item');
+		var $window = $(window);
+
+		function check_if_in_view() {
+		  var window_height = $window.height();
+		  var window_top_position = $window.scrollTop();
+		  var window_bottom_position = (window_top_position + window_height);
+		 
+		  $.each($animation_elements, function() {
+		    var $element = $(this);
+		    var element_height = $element.outerHeight();
+		    var element_top_position = $element.offset().top;
+		    var element_bottom_position = (element_top_position + element_height);
+		 
+		    //check to see if this current container is within viewport
+		    if ((element_bottom_position >= window_top_position) &&
+		        (element_top_position <= window_bottom_position)) {
+		      $element.addClass('animated fadeInLeft');
+		    } else {
+		      $element.removeClass('animated fadeInLeft');
+		    }
+		  });
+		}
+		var $animation_elements1 = $('.header');
+		$window = $(window);
+
+		function check_if_in_view1() {
+		  window_height = $window.height();
+		  window_top_position = $window.scrollTop();
+		  window_bottom_position = (window_top_position + window_height);
+		 
+		  $.each($animation_elements1, function() {
+		    $element = $(this);
+		    element_height = $element.outerHeight();
+		    element_top_position = $element.offset().top;
+		    element_bottom_position = (element_top_position + element_height);
+		 
+		    //check to see if this current container is within viewport
+		    if ((element_bottom_position >= window_top_position) &&
+		        (element_top_position <= window_bottom_position)) {
+		      $element.addClass('animated fadeInUp');
+		    } else {
+		      $element.removeClass('animated fadeInUp');
+		    }
+		  });
+		}
+
+		var $animation_elements2 = $('.form');
+		$window = $(window);
+
+		function check_if_in_view2() {
+		  window_height = $window.height();
+		  window_top_position = $window.scrollTop();
+		  window_bottom_position = (window_top_position + window_height);
+		 
+		  $.each($animation_elements2, function() {
+		    $element = $(this);
+		    element_height = $element.outerHeight();
+		    element_top_position = $element.offset().top;
+		    element_bottom_position = (element_top_position + element_height);
+		 
+		    //check to see if this current container is within viewport
+		    if ((element_bottom_position >= window_top_position) &&
+		        (element_top_position <= window_bottom_position)) {
+		      $element.addClass('animated fadeInRight');
+		    } else {
+		      $element.removeClass('animated fadeInRight');
+		    }
+		  });
+		}
+
+		$window.on('scroll resize', check_if_in_view);
+		$window.on('scroll resize', check_if_in_view1);
+		$window.on('scroll resize', check_if_in_view2);
+		$window.trigger('scroll');

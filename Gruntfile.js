@@ -37,7 +37,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'output.css': ['bootstrap/dist/css/bootstrap-theme.css', 'bootstrap/dist/css/bootstrap.css', 'style.css']
+          'output.css': ['bootstrap/dist/css/bootstrap-theme.css', 'bootstrap/dist/css/bootstrap.css', 'animate.css/animate.min.css', 'style.css']
         }
       }
     }
