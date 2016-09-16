@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         dest: 'dist/basic.js',
       },
       extras: {
-        src: ['jquery/dist/jquery.js', 'bootstrap/dist/js/bootstrap.js'],
+        src: ['jquery/dist/jquery.js', 'bootstrap/dist/js/bootstrap.js', 'anijs/dist/anijs.js', 'anijs/dist/helpers/scrollreveal/anijs-helper-scrollreveal.js'],
         dest: 'dist/with_extras.js',
       },
     },
