@@ -65,30 +65,31 @@ window.onload = function() {
 	                 var id = $('.item.active').data('slide-number');
 	                $('#carousel-text').html($('#slide-content-'+id).html());
 	        });
+	        		$(document).scroll(function () {
+					    var users = $("#goUsers").offset().top-2;
+					    var contacts = $("#goContacts").offset().top-2;
+					    var home = $("#goHome").offset().top;
+					    var s_top = $('body').scrollTop() || $('html').scrollTop();
+					    var s_top_moz = $('html').scrollTop();
+					    var main = $('.main').offset().top + 20;
+					    var shadow = 21;
+						    if(s_top > home){
+						    	$('.red').removeClass('red');
+						        $('.home').addClass('red');
+						    }
+						    if(s_top > users){
+						        $('.red').removeClass('red');
+						        $('.users').addClass('red');
+						    }
+						    if(s_top > contacts){
+						        $('.red').removeClass('red');
+						        $('.contacts').addClass('red');
+						    }
+						    if(s_top > main){
+						        $('.main').addClass('fix');
+						    }
+						    if(shadow > s_top){
+						        $('.main').removeClass('fix');
+						    }
+					});
 		};
-
-		$(document).scroll(function () {
-		    var users = $("#goUsers").offset().top-2;
-		    var contacts = $("#goContacts").offset().top-2;
-		    var home = $("#goHome").offset().top;
-		    var s_top = $("body").scrollTop();
-		    var main = $('.main').offset().top + 20;
-			    if(s_top > home){
-			    	$('.red').removeClass('red');
-			        $('.home').addClass('red');
-			    }
-			    if(s_top > users){
-			        $('.red').removeClass('red');
-			        $('.users').addClass('red');
-			    }
-			    if(s_top > contacts){
-			        $('.red').removeClass('red');
-			        $('.contacts').addClass('red');
-			    }
-			    if(s_top > main){
-			        $('.main').addClass('fix');
-			    }
-			    if(21 > s_top){
-			        $('.main').removeClass('fix');
-			    }
-		});
