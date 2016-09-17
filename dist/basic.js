@@ -19,7 +19,7 @@ window.onload = function() {
 			        scrollTop: $("#goContacts").offset().top
 			    }, 2000);
 			});
-			$( "#menu_xs" ).on({
+			$( ".glyphicon-menu-hamburger" ).on({
                 click: function() {
                 $(".menu_sm").toggleClass("unvisible");
             }});
@@ -70,7 +70,6 @@ window.onload = function() {
 					    var contacts = $("#goContacts").offset().top-2;
 					    var home = $("#goHome").offset().top;
 					    var s_top = $('body').scrollTop() || $('html').scrollTop();
-					    var s_top_moz = $('html').scrollTop();
 					    var main = $('.main').offset().top + 20;
 					    var shadow = 21;
 						    if(s_top > home){
