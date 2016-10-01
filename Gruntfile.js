@@ -29,27 +29,15 @@ module.exports = function(grunt) {
           'dest/output.min.js': ['dist/with_extras.js', 'dist/basic.js']
         }
       }
-    },
-    cssmin: {
-      options: {
-        shorthandCompacting: false,
-        roundingPrecision: -1
-      },
-      target: {
-        files: {
-          'output.css': ['bootstrap/dist/css/bootstrap-theme.css', 'bootstrap/dist/css/bootstrap.css', 'animate.css/animate.min.css', 'style.css']
-        }
-      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.registerTask('test', ['jshint', 'concat', 'uglify', 'cssmin']);
+  grunt.registerTask('test', ['jshint', 'concat', 'uglify']);
 
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
 
 };
